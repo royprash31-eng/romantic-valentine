@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Heart's Whisper 💕</title>
+    <!-- Google Fonts for romantic, cursive styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #ffe4e1, #ffb6c1, #dda0dd, #e6e6fa, #f0e68c); /* Romantic pastel gradient: blush, rose, lavender */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating romantic elements: hearts, roses, kisses, letters */
+        .floating-element {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: romantic-float 12s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes romantic-float {
+            0% { transform: translateY(100vh) rotate(0deg) scale(0.8); }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg) scale(1.2); opacity: 0; }
+        }
+
+        /* Main card with soft glow */
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 40px rgba(255, 182, 193, 0.3); /* Soft pink shadow */
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            transition: all 0.5s ease;
+            border: 2px solid rgba(255, 105, 180, 0.2);
+        }
+
+        /* Romantic main text with poem */
+        .main-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: #dc143c; /* Crimson for passion */
+            margin-bottom: 1.5rem;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .poem {
+            font-size: 1.1rem;
+            color: #8b008b; /* Dark magenta */
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Subtext */
+        .sub-text {
+            font-size: 1.3rem;
+            color: #ff69b4; /* Hot pink */
+            margin-bottom: 2.5rem;
+        }
+
+        /* Buttons with romantic glow */
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            gap: 1.5rem;
+        }
+
+        button {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.3rem;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+            position: relative;
+        }
+
+        .yes-btn {
+            background: linear-gradient(45deg, #ff1493, #ffb6c1); /* Deep pink gradient */
+            color: white;
+        }
+
+        .no-btn {
+            background: linear-gradient(45deg, #dda0dd, #f8f8ff); /* Lavender gradient */
+            color: #333;
+        }
+
+        /* Romantic hover glow */
+        button:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(255, 20, 147, 0.4);
+        }
+
+        /* Celebration screen with love letter */
+        .celebration {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ffe4e1, #ffb6c1, #dda0dd, #e6e6fa, #f0e68c);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 10;
+            animation: fade-in 2s ease-in-out;
+        }
+
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .love-letter {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .love-letter h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #dc143c;
+            margin-bottom: 1rem;
+        }
+
+        .love-letter p {
+            font-size: 1.2rem;
+            color: #8b008b;
+            line-height: 1.6;
+        }
+
+        /* Romantic particles: hearts, sparkles, roses */
+        .particle {
+            position: absolute;
+            font-size: 2.5rem;
+            animation: romantic-fall 6s linear infinite;
+        }
+
+        @keyframes romantic-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Responsive for mobile romance */
+        @media (max-width: 600px) {
+            .main-text { font-size: 2.2rem; }
+            .poem { font-size: 1rem; }
+            .sub-text { font-size: 1.1rem; }
+            button { font-size: 1.1rem; padding: 0.8rem 1.5rem; }
+            .love-letter { padding: 1.5rem; max-width: 90%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating romantic elements -->
+    <div id="floating-elements"></div>
+
+    <!-- Main romantic card -->
+    <div class="card" id="main-card">
+        <h1 class="main-text">My Heart's Whisper 💕</h1>
+        <p class="poem">
+            In the garden of my dreams, where roses softly bloom,<br>
+            I found a love so true, dispelling all the gloom.<br>
+            With every beat, my soul calls out to you,<br>
+            Will you be my forever, in skies of endless blue? 🌹💋
+        </p>
+        <p class="sub-text">I promise eternal love, sweet kisses, and endless cuddles 🍓💋</p>
+        <div class="buttons">
+            <button class="yes-btn" id="yes-btn">Yes, My Love 💖</button>
+            <button class="no-btn" id="no-btn">Not Yet 🥺</button>
+        </div>
+    </div>
+
+    <!-- Romantic celebration with love letter -->
+    <div class="celebration" id="celebration">
+        <div class="love-letter">
+            <h1>YAYYYYY!! 😍💘 My Heart is Yours!!!</h1>
+            <p>
+                Oh, my dearest, you've made me the happiest soul alive! 💕<br>
+                From this moment, our love story begins – filled with laughter, adventures, and endless tenderness.<br>
+                I love you more than words can say. Forever yours. 🌹✨
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Elements
+        const mainCard = document.getElementById('main-card');
+        const yesBtn = document.getElementById('yes-btn');
+        const noBtn = document.getElementById('no-btn');
+        const celebration = document.getElementById('celebration');
+        const floatingElements = document.getElementById('floating-elements');
+
+        // More romantic "No" messages
+        const noMessages = [
+            "Aww, my love... are you sure? Your heart whispers otherwise 🥺👉👈",
+            "Really? My soul aches for you... please reconsider 😢💔",
+            "But I poured my heart into this, just for you 🌹",
+            "My love is breaking... don't let it shatter 💔😭",
+            "One last chance, my darling – say yes to forever 🥹💞"
+        ];
+        let noClickCount = 0;
+
+        // Generate floating romantic elements
+        function createFloatingElements() {
+            const elements = ['💕', '🌹', '💋', '💌', '✨'];
+            for (let i = 0; i < 30; i++) {
+                const el = document.createElement('div');
+                el.className = 'floating-element';
+                el.textContent = elements[Math.floor(Math.random() * elements.length)];
+                el.style.left = Math.random() * 100 + '%';
+                el.style.animationDelay = Math.random() * 12 + 's';
+                floatingElements.appendChild(el);
+            }
+        }
+        createFloatingElements();
+
+        // Yes button click: Romantic celebration
+        yesBtn.addEventListener('click', () => {
+            mainCard.style.display = 'none';
+            celebration.style.display = 'flex';
+            // Create romantic particles
+            for (let i = 0; i < 60; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.textContent = ['💕', '🌹', '💋', '✨'][Math.floor(Math.random() * 4)];
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                celebration.appendChild(particle);
+            }
+            // Optional: Play a soft romantic sound (uncomment and add 'romantic-chime.mp3')
+            // const audio = new Audio('romantic-chime.mp3');
+            // audio.play();
+        });
+
+        // No button click: Pleading romance
+        noBtn.addEventListener('click', () => {
+            if (noClickCount < noMessages.length) {
+                document.querySelector('.sub-text').textContent = noMessages[noClickCount];
+                noBtn.style.transform = `scale(${1 - noClickCount * 0.1})`;
+                yesBtn.style.transform = `scale(${1 + noClickCount * 0.1})`;
+                noClickCount++;
+            } else {
+                // Romantic "run away" with a pleading twist
+                noBtn.style.position = 'absolute';
+                noBtn.addEventListener('mouseover', () => {
+                    const x = Math.random() * (window.innerWidth - 100);
+                    const y = Math.random() * (window.innerHeight - 50);
+                    noBtn.style.left = x + 'px';
+                    noBtn.style.top = y + 'px';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
